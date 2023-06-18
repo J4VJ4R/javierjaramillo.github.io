@@ -83,10 +83,13 @@
             
             <section class="section summary-section">
                 <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Perfil Profesional</h2>
+                <div class="summary-buttons">
+                    <a href="#" class="translation-link" onclick="translateTo('ES')">ES</a>
+                    <a href="#" class="translation-link" onclick="translateTo('EN')">EN</a>
+                </div>
                 <div class="summary">
-                    <p>Soy un desarrollador de software enfocado en frontend y backend, una persona honesta, trabajadora, disciplinada y me gusta continuar cuando las cosas parecen difíciles, pero sé que solo se necesita más práctica e investigación para resolver los problemas, enfrentándome a diario para dar más de mi parte, para ser cada día mejor como profesional y ser humano.
-
-                        Me gusta mucho aprender constantemente, tengo resiliencia y también la aplico en nuestro trabajo ya que, constantemente nos vemos desbordados por los bloqueos y la falta de conocimiento para llevar a cabo los proyectos solicitados, pero una vez que he interiorizado los requisitos necesarios me muevo a buscar nuevos y eficientes soluciones</p>
+                    <p>Soy un desarrollador de software enfocado en frontend y backend, una persona honesta, trabajadora, disciplinada y me gusta continuar cuando las cosas parecen difíciles, pero sé que solo se necesita más práctica e investigación para resolver los problemas, enfrentándome a diario para dar más de mi parte, para ser cada día mejor como profesional y ser humano.</p>
+                    <p>Me gusta mucho aprender constantemente, tengo resiliencia y también la aplico en nuestro trabajo ya que, constantemente nos vemos desbordados por los bloqueos y la falta de conocimiento para llevar a cabo los proyectos solicitados, pero una vez que he interiorizado los requisitos necesarios me muevo a buscar nuevas y eficientes soluciones.</p>
                 </div><!--//summary-->
             </section><!--//section-->
             
@@ -217,7 +220,29 @@
             <small class="copyright">Designed with <i class="fa-solid fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
         </div><!--//container-->
     </footer><!--//footer-->
-        
+    <script>
+        function translateTo(lang) {
+            const summarySection = document.querySelector('.summary-section');
+            const summary = summarySection.querySelector('.summary');
+            const links = summarySection.querySelectorAll('.translation-link');
+    
+            if (lang === 'ES') {
+                summary.innerHTML = `
+                    <p>Soy un desarrollador de software enfocado en frontend y backend, una persona honesta, trabajadora, disciplinada y me gusta continuar cuando las cosas parecen difíciles, pero sé que solo se necesita más práctica e investigación para resolver los problemas, enfrentándome a diario para dar más de mi parte, para ser cada día mejor como profesional y ser humano.</p>
+                    <p>Me gusta mucho aprender constantemente, tengo resiliencia y también la aplico en nuestro trabajo ya que, constantemente nos vemos desbordados por los bloqueos y la falta de conocimiento para llevar a cabo los proyectos solicitados, pero una vez que he interiorizado los requisitos necesarios me muevo a buscar nuevas y eficientes soluciones.</p>
+                `;
+            } else if (lang === 'EN') {
+                summary.innerHTML = `
+                    <p>I am a software developer focused on frontend and backend, an honest, hardworking, disciplined person, and I like to persevere when things seem difficult. I know that it only takes more practice and research to solve problems, facing them daily to give my best and strive to improve myself both professionally and personally.</p>
+                    <p>I greatly enjoy continuous learning. I have resilience, which I also apply in our work since we often encounter obstacles and lack of knowledge to carry out the requested projects. However, once I have internalized the necessary requirements, I actively seek new and efficient solutions.</p>
+                `;
+            }
+    
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-lang') === lang);
+            });
+        }
+    </script>
 </body>
 </html> 
 
