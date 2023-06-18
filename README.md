@@ -1,6 +1,6 @@
 # Portafolio Javier Jaramillo - Ingeniero de Sistemas
 
-![Imagen de Portafolio](/javierjaramillo.github.io/assets/images/cv.jpg)
+![Imagen de Portafolio](/assets/images/cv.jpg)
 
 #### 👨‍💻 ¡Bienvenido a mi portafolio! Soy Javier Jaramillo, un ingeniero de sistemas apasionado por la tecnología y el desarrollo de software. Este repositorio contiene una recopilación de mis proyectos y habilidades técnicas. 
 
